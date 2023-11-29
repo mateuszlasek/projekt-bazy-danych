@@ -6,9 +6,7 @@ body {
     margin: 0;
     background-color: #f4f4f4;
 }
-.login-message{
-    position:relative;
-}
+
 form {
     width: 300px;
     padding: 20px;

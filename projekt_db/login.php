@@ -18,7 +18,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row["password"])) {
             // Poprawne logowanie
-            $loginError = "Zalogowano pomyślnie!";
+            session_start();
+            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['role'] = $row['role'];
+
+            // Przekierowanie użytkownika w zależności od roli
+            if ($_SESSION['role'] === 'admin') {
+                header('Location: admin_panel.php');
+                exit();
+            } else {
+                header('Location: user_dashboard.php');
+                exit();
+            }
         } else {
             // Nieprawidłowe hasło
             $loginError = "Błędne hasło. Spróbuj ponownie.";
@@ -43,28 +55,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="login-container">
     <div class="login-message">
         <?php
-            // Wyświetl komunikat błędu logowania, jeśli istnieje
-            if (!empty($loginError)) {
-                echo "<p style='color: red;'>$loginError</p>";
-            }
-            ?>
+        // Wyświetl komunikat błędu logowania, jeśli istnieje
+        if (!empty($loginError)) {
+            echo "<p style='color: red;'>$loginError</p>";
+        }
+        ?>
     </div>
 
-
-
     <form action="login.php" method="post">
-    <label for="username">Nazwa użytkownika:</label>
-    <input type="text" id="username" name="username" required value="<?php echo $username; ?>">
+        <label for="username">Nazwa użytkownika:</label>
+        <input type="text" id="username" name="username" required value="<?php echo $username; ?>">
 
-    <label for="password">Hasło:</label>
-    <input type="password" id="password" name="password" required>
+        <label for="password">Hasło:</label>
+        <input type="password" id="password" name="password" required>
 
-    <button type="submit">Zaloguj się</button>
+        <button type="submit">Zaloguj się</button>
 
-    <p>Nie masz konta? <a href="register.php">Zarejestruj się</a></p>
+        <p>Nie masz konta? <a href="register.php">Zarejestruj się</a></p>
     </form>
-
-    
 </div>
 
 </body>
