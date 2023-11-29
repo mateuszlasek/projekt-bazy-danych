@@ -36,59 +36,6 @@ body {
     font-weight: bold;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: white;
-}
-
-.logo div {
-    float: left;
-    margin-left: 5px;
-    margin-top: 3px;
-    margin-bottom: 0px;
-}
-
-.logotext2 {
-    position: relative;
-    clear: both;
-    font-size: 20px; /* Adjust font size */
-}
-
-.nav-links {
-    display: flex;
-    justify-content: space-around;
-    width: 40%;
-}
-
-.nav-links li {
-    list-style: none;
-}
-
-.nav-links li a {
-    color: black;
-    text-decoration: none;
-    letter-spacing: 3px;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.nav-links li a:hover {
-    color: #F67F7F;
-}
-
-.button {
-    display: none;
-    cursor: pointer;
-}
-
-.button div {
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    margin: 5px;
-}
 
 @media screen and (max-width: 1024px) {
     .nav-links {

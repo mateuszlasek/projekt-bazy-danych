@@ -60,6 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<p style='color: red;'>$loginError</p>";
         }
         ?>
+
     </div>
 
     <form action="login.php" method="post">
