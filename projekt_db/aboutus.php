@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="pl"><head>
     <meta charset="utf-8">
     <title>O MNIE</title>
     <link rel="stylesheet" href="css/styleabout.css" type="text/css">
