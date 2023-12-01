@@ -29,6 +29,9 @@ session_start();
         <li>
             <a href="aboutus.php"><span>O NAS</span></a>
         </li>
+        <li>
+            <a href="reviews.php"><span>RECENZJE</span></a> <!-- Dodano przycisk "RECENZJE" -->
+        </li>
         <li class="user-info">
             <?php
             if (isset($_SESSION['user_id'])) {
@@ -46,5 +49,4 @@ session_start();
         <div class="line3"></div>
     </div>
 </div>
-
 </body>
