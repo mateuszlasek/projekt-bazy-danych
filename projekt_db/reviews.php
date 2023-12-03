@@ -54,7 +54,7 @@
             $insert_stmt = $conn->prepare($insert_query);
 
             // Dodajemy 's' dla stringa, ponieważ name jest typu string
-            $insert_stmt->bind_param("iissi", $user_id, $car_id, $name, $rating, $review_text);
+            $insert_stmt->bind_param("iisss", $user_id, $car_id, $name, $rating, $review_text);
             $insert_stmt->execute();
             $insert_stmt->close();
         }

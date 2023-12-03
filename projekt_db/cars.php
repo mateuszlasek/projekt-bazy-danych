@@ -126,6 +126,7 @@
                             <img src="<?php echo $row['images']; ?>" alt="<?php echo $row['model']; ?>">
                             <div class="photo-info">
                                 <h3><?php echo $row['model']; ?></h3>
+                        
                                 <p><?php echo $row['opis']; ?></p>
                             </div>
                         </a>
